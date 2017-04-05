@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="27a92ef582414bd9b2ea165bf7967986" Name="Diagram1" ZoomLevel="101">
+        <EntityTypeShape EntityType="Model.AchaFournisseurs" Width="1.5" PointX="5" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Achats" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AspNetRoles" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AspNetUserClaims" Width="1.5" PointX="5" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AspNetUserLogins" Width="1.5" PointX="5" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AspNetUsers" Width="1.5" PointX="0.5" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Avis" Width="1.5" PointX="7" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Categories" Width="1.5" PointX="7.25" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Departments" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Fournisseurs" Width="1.5" PointX="7.125" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Notifications" Width="1.5" PointX="0.5" PointY="2.625" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_dbo_AchaFournisseurs_dbo_Achats_AchatID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_AchaFournisseurs_dbo_Fournisseurs_FournisseurID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Achats_dbo_Departments_DepartmentID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Avis_dbo_Achats_AchatID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Notifications_dbo_Achats_AchatID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_AspNetUsers_dbo_Departments_DepartmentID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.AspNetUserRoles" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.CategoryInFournisseurs" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

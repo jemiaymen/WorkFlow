@@ -1,0 +1,61 @@
+﻿@using Microsoft.AspNet.Identity
+
+@if (Request.IsAuthenticated)
+{
+
+    
+
+    if (User.IsInRole(SecurityRole.Decideur))
+    {
+        <li>@Html.ActionLink("Decideur", "About", "Home")</li>
+    }
+
+    if (User.IsInRole(SecurityRole.Demandeur))
+    {
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Besoin <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li>@Html.ActionLink("Consulter", "Index", "Besoin")</li>
+                    <li>@Html.ActionLink("Créer", "Create", "Besoin")</li>
+                </ul>
+            </li>
+    
+        <li>@Html.ActionLink("Demande Modification", "Dem", "Demande")</li>
+
+        if (ViewBag.DemNotif != null && ViewBag.DemNotif != "0" )
+        {
+            <li><a href="/Demande/DemNotif">Notification <span class="badge">@ViewBag.DemNotif</span></a> </li>
+        }
+
+
+
+    }
+
+    if (User.IsInRole(SecurityRole.RespAcha))
+    {
+
+        if (ViewBag.RespNotif != null && ViewBag.RespNotif != "0")
+        {
+            <li><a href="/Demande/RespNotif">Notification <span class="badge">@ViewBag.RespNotif</span></a> </li>
+        }
+
+
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Besoin <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li>@Html.ActionLink("Consulter", "IndexDem", "Besoin")</li>
+                <li>@Html.ActionLink("Créer", "Create", "Besoin")</li>
+            </ul>
+        </li>
+
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Demande Achat <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li>@Html.ActionLink("Consulter", "Index", "Achat")</li>
+            </ul>
+        </li>
+    }
+
+    <li>@Html.ActionLink("About", "About", "Home")</li>
+}
+

@@ -1,0 +1,59 @@
+﻿@model IEnumerable<WorkFlow.Models.Notification>
+
+@{
+    ViewBag.Title = "Notification";
+}
+
+<h2>@ViewBag.Title</h2>
+<hr />
+<br /><br />
+
+
+<table class="table table-striped table-hover table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Achat.Des)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lbl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Achat.Des)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lbl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+
+            <td>
+                @if (item.Type == WorkFlow.Models.NType.DemandeModification)
+                {
+                    @Html.ActionLink("Modifier", "Edit", new { id = item.ID })
+                }
+                else if (item.Type == WorkFlow.Models.NType.BesoinCreer || item.Type == WorkFlow.Models.NType.BesoinModifierParDemandeur)
+                {
+                    @Html.ActionLink("Detail", "Detail", new { id = item.ID })
+                }
+                
+            </td>
+        </tr>
+    }
+
+</table>

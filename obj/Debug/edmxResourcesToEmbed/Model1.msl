@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="AchaFournisseurs">
+      <EntityTypeMapping TypeName="Model.AchaFournisseurs">
+        <MappingFragment StoreEntitySet="AchaFournisseurs">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AchatID" ColumnName="AchatID" />
+          <ScalarProperty Name="FournisseurID" ColumnName="FournisseurID" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Remise" ColumnName="Remise" />
+          <ScalarProperty Name="Dt" ColumnName="Dt" />
+          <ScalarProperty Name="State" ColumnName="State" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Achats">
+      <EntityTypeMapping TypeName="Model.Achats">
+        <MappingFragment StoreEntitySet="Achats">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="Des" ColumnName="Des" />
+          <ScalarProperty Name="Categ" ColumnName="Categ" />
+          <ScalarProperty Name="DtAcha" ColumnName="DtAcha" />
+          <ScalarProperty Name="Creation" ColumnName="Creation" />
+          <ScalarProperty Name="LieuLiv" ColumnName="LieuLiv" />
+          <ScalarProperty Name="Imp" ColumnName="Imp" />
+          <ScalarProperty Name="Qte" ColumnName="Qte" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="Model.AspNetRoles">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="Model.AspNetUserClaims">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="Model.AspNetUserLogins">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="Model.AspNetUsers">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Datenaiss" ColumnName="Datenaiss" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="SignatureUser" ColumnName="SignatureUser" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Avis">
+      <EntityTypeMapping TypeName="Model.Avis">
+        <MappingFragment StoreEntitySet="Avis">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AchatID" ColumnName="AchatID" />
+          <ScalarProperty Name="Lbl" ColumnName="Lbl" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Accept" ColumnName="Accept" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="Model.Categories">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Lbl" ColumnName="Lbl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="Model.Departments">
+        <MappingFragment StoreEntitySet="Departments">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Dep" ColumnName="Dep" />
+          <ScalarProperty Name="Budget" ColumnName="Budget" />
+          <ScalarProperty Name="Depense" ColumnName="Depense" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fournisseurs">
+      <EntityTypeMapping TypeName="Model.Fournisseurs">
+        <MappingFragment StoreEntitySet="Fournisseurs">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nom_frn" ColumnName="Nom_frn" />
+          <ScalarProperty Name="Adress_frn" ColumnName="Adress_frn" />
+          <ScalarProperty Name="Mail_frn" ColumnName="Mail_frn" />
+          <ScalarProperty Name="Tel_frn" ColumnName="Tel_frn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notifications">
+      <EntityTypeMapping TypeName="Model.Notifications">
+        <MappingFragment StoreEntitySet="Notifications">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AchatID" ColumnName="AchatID" />
+          <ScalarProperty Name="Lbl" ColumnName="Lbl" />
+          <ScalarProperty Name="Dt" ColumnName="Dt" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Etat" ColumnName="Etat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="Model.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+      <EndProperty Name="AspNetUsers">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CategoryInFournisseurs" TypeName="Model.CategoryInFournisseurs" StoreEntitySet="CategoryInFournisseurs">
+      <EndProperty Name="Categories">
+        <ScalarProperty Name="ID" ColumnName="CategoryID" />
+      </EndProperty>
+      <EndProperty Name="Fournisseurs">
+        <ScalarProperty Name="ID" ColumnName="FournisseurID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

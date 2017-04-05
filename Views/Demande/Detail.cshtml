@@ -1,0 +1,75 @@
+﻿@model WorkFlow.Models.Notification
+
+@{
+    ViewBag.Title = "Besoin";
+}
+
+<h2>@ViewBag.Title</h2>
+<hr />
+<br /><br />
+
+<table class="table table-striped table-hover table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Achat.Department.Dep)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Achat.Des)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Achat.Categ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Achat.DtAcha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Achat.Creation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Achat.LieuLiv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Achat.Imp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Achat.Qte)
+        </th>
+        <th></th>
+        <th></th>
+    </tr>
+
+
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.Achat.Department.Dep)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Achat.Des)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Achat.Categ)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Achat.DtAcha)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Achat.Creation)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Achat.LieuLiv)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Achat.Imp)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Achat.Qte)
+            </td>
+            <td>
+                @Html.ActionLink("Accepter", "Accept", new { id = Model.ID }) 
+            </td>
+            <td>
+                @Html.ActionLink("Rejecter", "Reject", new { id = Model.ID })
+            </td>
+        </tr>
+
+</table>

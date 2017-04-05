@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AchaFournisseurs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AchatID" Type="Int32" Nullable="false" />
+    <Property Name="FournisseurID" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Single" Nullable="false" />
+    <Property Name="Remise" Type="Single" Nullable="false" />
+    <Property Name="Dt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="State" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Achats" Relationship="Self.FK_dbo_AchaFournisseurs_dbo_Achats_AchatID" FromRole="AchaFournisseurs" ToRole="Achats" />
+    <NavigationProperty Name="Fournisseurs" Relationship="Self.FK_dbo_AchaFournisseurs_dbo_Fournisseurs_FournisseurID" FromRole="AchaFournisseurs" ToRole="Fournisseurs" />
+  </EntityType>
+  <EntityType Name="Achats">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentID" Type="Int32" Nullable="false" />
+    <Property Name="Des" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Categ" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DtAcha" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Creation" Type="Boolean" Nullable="false" />
+    <Property Name="LieuLiv" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Imp" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Qte" Type="Int32" Nullable="false" />
+    <Property Name="Type" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AchaFournisseurs" Relationship="Self.FK_dbo_AchaFournisseurs_dbo_Achats_AchatID" FromRole="Achats" ToRole="AchaFournisseurs" />
+    <NavigationProperty Name="Departments" Relationship="Self.FK_dbo_Achats_dbo_Departments_DepartmentID" FromRole="Achats" ToRole="Departments" />
+    <NavigationProperty Name="Avis" Relationship="Self.FK_dbo_Avis_dbo_Achats_AchatID" FromRole="Achats" ToRole="Avis" />
+    <NavigationProperty Name="Notifications" Relationship="Self.FK_dbo_Notifications_dbo_Achats_AchatID" FromRole="Achats" ToRole="Notifications" />
+  </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Datenaiss" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Tel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SignatureUser" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DepartmentID" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+    <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+    <NavigationProperty Name="Departments" Relationship="Self.FK_dbo_AspNetUsers_dbo_Departments_DepartmentID" FromRole="AspNetUsers" ToRole="Departments" />
+    <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+  </EntityType>
+  <EntityType Name="Avis">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AchatID" Type="Int32" Nullable="false" />
+    <Property Name="Lbl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Code" Type="Int32" Nullable="false" />
+    <Property Name="Accept" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Achats" Relationship="Self.FK_dbo_Avis_dbo_Achats_AchatID" FromRole="Avis" ToRole="Achats" />
+  </EntityType>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Lbl" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Fournisseurs" Relationship="Self.CategoryInFournisseurs" FromRole="Categories" ToRole="Fournisseurs" />
+  </EntityType>
+  <EntityType Name="Departments">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Dep" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Budget" Type="Single" Nullable="false" />
+    <Property Name="Depense" Type="Single" Nullable="false" />
+    <NavigationProperty Name="Achats" Relationship="Self.FK_dbo_Achats_dbo_Departments_DepartmentID" FromRole="Departments" ToRole="Achats" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_dbo_AspNetUsers_dbo_Departments_DepartmentID" FromRole="Departments" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="Fournisseurs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nom_frn" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Adress_frn" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Mail_frn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Tel_frn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AchaFournisseurs" Relationship="Self.FK_dbo_AchaFournisseurs_dbo_Fournisseurs_FournisseurID" FromRole="Fournisseurs" ToRole="AchaFournisseurs" />
+    <NavigationProperty Name="Categories" Relationship="Self.CategoryInFournisseurs" FromRole="Fournisseurs" ToRole="Categories" />
+  </EntityType>
+  <EntityType Name="Notifications">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AchatID" Type="Int32" Nullable="false" />
+    <Property Name="Lbl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Dt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Type" Type="Int32" Nullable="false" />
+    <Property Name="Etat" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Achats" Relationship="Self.FK_dbo_Notifications_dbo_Achats_AchatID" FromRole="Notifications" ToRole="Achats" />
+  </EntityType>
+  <Association Name="FK_dbo_AchaFournisseurs_dbo_Achats_AchatID">
+    <End Role="Achats" Type="Self.Achats" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AchaFournisseurs" Type="Self.AchaFournisseurs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Achats">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AchaFournisseurs">
+        <PropertyRef Name="AchatID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AchaFournisseurs_dbo_Fournisseurs_FournisseurID">
+    <End Role="Fournisseurs" Type="Self.Fournisseurs" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AchaFournisseurs" Type="Self.AchaFournisseurs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fournisseurs">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AchaFournisseurs">
+        <PropertyRef Name="FournisseurID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Achats_dbo_Departments_DepartmentID">
+    <End Role="Departments" Type="Self.Departments" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Achats" Type="Self.Achats" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departments">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Achats">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Avis_dbo_Achats_AchatID">
+    <End Role="Achats" Type="Self.Achats" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Avis" Type="Self.Avis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Achats">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Avis">
+        <PropertyRef Name="AchatID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Notifications_dbo_Achats_AchatID">
+    <End Role="Achats" Type="Self.Achats" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Notifications" Type="Self.Notifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Achats">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Notifications">
+        <PropertyRef Name="AchatID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUsers_dbo_Departments_DepartmentID">
+    <End Role="Departments" Type="Self.Departments" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departments">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AspNetUsers">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AspNetUserRoles">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="*" />
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="*" />
+  </Association>
+  <Association Name="CategoryInFournisseurs">
+    <End Role="Categories" Type="Self.Categories" Multiplicity="*" />
+    <End Role="Fournisseurs" Type="Self.Fournisseurs" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AchaFournisseurs" EntityType="Self.AchaFournisseurs" />
+    <EntitySet Name="Achats" EntityType="Self.Achats" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" />
+    <EntitySet Name="Avis" EntityType="Self.Avis" />
+    <EntitySet Name="Categories" EntityType="Self.Categories" />
+    <EntitySet Name="Departments" EntityType="Self.Departments" />
+    <EntitySet Name="Fournisseurs" EntityType="Self.Fournisseurs" />
+    <EntitySet Name="Notifications" EntityType="Self.Notifications" />
+    <AssociationSet Name="FK_dbo_AchaFournisseurs_dbo_Achats_AchatID" Association="Self.FK_dbo_AchaFournisseurs_dbo_Achats_AchatID">
+      <End Role="Achats" EntitySet="Achats" />
+      <End Role="AchaFournisseurs" EntitySet="AchaFournisseurs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AchaFournisseurs_dbo_Fournisseurs_FournisseurID" Association="Self.FK_dbo_AchaFournisseurs_dbo_Fournisseurs_FournisseurID">
+      <End Role="Fournisseurs" EntitySet="Fournisseurs" />
+      <End Role="AchaFournisseurs" EntitySet="AchaFournisseurs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Achats_dbo_Departments_DepartmentID" Association="Self.FK_dbo_Achats_dbo_Departments_DepartmentID">
+      <End Role="Departments" EntitySet="Departments" />
+      <End Role="Achats" EntitySet="Achats" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Avis_dbo_Achats_AchatID" Association="Self.FK_dbo_Avis_dbo_Achats_AchatID">
+      <End Role="Achats" EntitySet="Achats" />
+      <End Role="Avis" EntitySet="Avis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Notifications_dbo_Achats_AchatID" Association="Self.FK_dbo_Notifications_dbo_Achats_AchatID">
+      <End Role="Achats" EntitySet="Achats" />
+      <End Role="Notifications" EntitySet="Notifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUsers_dbo_Departments_DepartmentID" Association="Self.FK_dbo_AspNetUsers_dbo_Departments_DepartmentID">
+      <End Role="Departments" EntitySet="Departments" />
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+    </AssociationSet>
+    <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+    </AssociationSet>
+    <AssociationSet Name="CategoryInFournisseurs" Association="Self.CategoryInFournisseurs">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Fournisseurs" EntitySet="Fournisseurs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
