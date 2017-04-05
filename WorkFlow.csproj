@@ -186,7 +186,9 @@
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BesoinController.cs" />
+    <Compile Include="Controllers\CategController.cs" />
     <Compile Include="Controllers\DemandeController.cs" />
+    <Compile Include="Controllers\FourController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\WorkController.cs" />
@@ -202,6 +204,10 @@
     <Compile Include="Migrations\201704041824191_init.cs" />
     <Compile Include="Migrations\201704041824191_init.Designer.cs">
       <DependentUpon>201704041824191_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704051222597_indexedcategory.cs" />
+    <Compile Include="Migrations\201704051222597_indexedcategory.Designer.cs">
+      <DependentUpon>201704051222597_indexedcategory.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model1.Context.cs">
@@ -315,6 +321,16 @@
     <Content Include="Views\Demande\Dem.cshtml" />
     <Content Include="Views\Demande\DemEdit.cshtml" />
     <Content Include="Views\Demande\Edit.cshtml" />
+    <Content Include="Views\Categ\Create.cshtml" />
+    <Content Include="Views\Categ\Delete.cshtml" />
+    <Content Include="Views\Categ\Details.cshtml" />
+    <Content Include="Views\Categ\Edit.cshtml" />
+    <Content Include="Views\Categ\Index.cshtml" />
+    <Content Include="Views\Four\Create.cshtml" />
+    <Content Include="Views\Four\Delete.cshtml" />
+    <Content Include="Views\Four\Details.cshtml" />
+    <Content Include="Views\Four\Edit.cshtml" />
+    <Content Include="Views\Four\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -330,6 +346,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201704041824191_init.resx">
       <DependentUpon>201704041824191_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704051222597_indexedcategory.resx">
+      <DependentUpon>201704051222597_indexedcategory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

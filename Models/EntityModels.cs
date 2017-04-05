@@ -66,6 +66,7 @@ namespace WorkFlow.Models
         [Required]
         [Display(Name = "Libeler Category")]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 4)]
+        [Index("IndexLblCategory", Order = 1, IsUnique = true )]
         public string Lbl { get; set; }
 
     }

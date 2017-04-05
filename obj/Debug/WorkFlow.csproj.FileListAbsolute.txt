@@ -55,3 +55,4 @@ c:\users\marwa yac\documents\visual studio 2013\Projects\WorkFlow\WorkFlow\obj\D
 c:\users\marwa yac\documents\visual studio 2013\Projects\WorkFlow\WorkFlow\obj\Debug\WorkFlow.pdb
 c:\users\marwa yac\documents\visual studio 2013\Projects\WorkFlow\WorkFlow\obj\Debug\WorkFlow.Migrations.init.resources
 c:\users\marwa yac\documents\visual studio 2013\Projects\WorkFlow\WorkFlow\obj\Debug\WorkFlow.csproj.GenerateResource.Cache
+C:\Users\Marwa Yac\documents\visual studio 2013\Projects\WorkFlow\WorkFlow\obj\Debug\WorkFlow.Migrations.indexedcategory.resources
